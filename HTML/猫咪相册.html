@@ -1,19 +1,89 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        <!--你可以通过在 head 添加 meta 元素来设置浏览器行为。-->
+        <meta charset="utf-8">
+        <title>CatPhotoApp</title>
+    </head>
     <body>
         <!--main 元素用于表示 HTML 文档正文的主要内容。 main 元素里的内容应该是文档中唯一的，不应该在文档的其他部分重复。-->
         <main>
+            <footer>
+                <p>No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a></p>
+            </footer>
             <!--h1 元素用于定义 HTML 标题。 h1 元素是最重要的标题， h6 是最不重要的标题。-->
             <h1>CatPhotoAPP</h1>
-            <h2>Cat Photos</h2>
-            <!-- TODO: Add link to cat photos -->
-            <p>Everyone loves cute cats online!</p>
-            <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back">
+            <section>
+                <h2>Cat Photos</h2>
+                <p>Everyone loves cute cats online!</p>
+                <a href="https://freecatphotoapp.com">
+                <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back">
+                </a>
             <!--HTML 属性是写在一个元素的开始标签中的特殊词汇，它们用于控制这个元素的行为。 在 img 元素中的 src 属性明确了一个图片的 URL（图片所在的位置）。
             所有的 img 元素都应该有一个 alt 属性。 alt 属性的文本（值）有两个作用，第一个作用是让屏幕阅读器可以知晓图片的内容，这会对网页的可访问性有很大提升；另一个作用是当图片无法加载时，页面需要显示的替代文本。-->
-            <p>See more<a href="https://freecatphotoapp.com">cat photos</a>in our gallery.</p>
+                <p>See more <a href="https://freecatphotoapp.com"target="_blank">cat photos</a> in our gallery.</p>
             <!--HTML 的 a 元素（锚元素）可以用来创建指向另一个文档的链接。 a 元素使用 href 属性来指定链接的目标地址。-->
+            <!--要在新标签页中打开链接，你可以在锚元素（a）中使用 target 属性。target 属性指定了在哪里打开链接文档。 target="_blank" 意思是在新标签页或窗口中打开链接的文档。-->
+                </section>
 
+                <section>
+                    <h2>Cat Lists</h2>
+                    <h3>Things cats love:</h3>
+                    <ul>
+                        <li>catnip</li>
+                        <li>laser pointers</li>
+                        <li>lasagna</li>
+                    </ul>
+                    <!--无序列表-->>
+                    <!--figure 元素代表自包含的内容，允许您将图像与标题相关联。-->
+                    <figure>
+                    <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg" alt="A slice of lasagna on a plate.">
+                    <figcaption>Cats <em>love</em> lasagna.</figcaption>
+                    </figure>
+                    <!--图像标题（figcaption）元素用于添加标题以描述 figure 元素中包含的图像。-->
+                    <h3>Top 3 things cats hate:</h3>
+                    <ol>
+                        <li>flea treatment</li> 
+                        <li>thunder</li> 
+                        <li>other cats</li>
+                    </ol>
+                    <figure>
+                        <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg" alt="Five cats looking around a field.">
+                        <figcaption>Cats <strong>hate</strong> other cats.</figcaption>
+                    </figure>
+                </section>
+
+                <section>
+                    <h2>Cat Form</h2>
+                    <form action="https://freecatphotoapp.com/submit-cat-photo">
+                        <fieldset>
+                            <!--fieldset 元素用于在 Web 表单中将相关的输入和标签组合在一起。 fieldset 元素是块级元素，这意味着它们出现在新的一行上。-->
+                            <!--legend 元素充当 fieldset 元素中内容的标题。 它为用户提供了应该在表单的该部分中输入什么的上下文。-->
+                            <legend>Is your cat an indoor or outdoor cat?</legend>
+                            <label> <input type="radio" id="indoor" name="indoor-outdoor" value="indoor">Indoor</label>
+                            <label><input type="radio" id="outdoor" name="indoor-outdoor" value="outdoor">Outdoor</label>
+                        </fieldset>
+                        <!--label 元素用于帮助将 input 元素的文本与 input 元素本身关联起来（尤其是对于屏幕阅读器等辅助技术）。-->
+                        <!--对于需要从多个选项中获得一个答案的问题，你可以使用单选按钮。-->
+                        <!--id 属性用于标识特定的 HTML 元素。 每个 id 属性的值必须不同于整个页面的所有其他 id 值。-->
+                        <fieldset>
+                            <legend>What's your cat's personality?</legend>
+                            <input checked type="checkbox" id="loving" name="personality?" value="loving"><label for="loving">Loving</label>
+                            <input checked type="checkbox" id="lazy" name="personality?" value="lazy"><label for="lazy">Lazy</label>
+                            <!--为了使复选框或单选按钮默认被选中，你需要为其添加 checked 属性。-->
+                            <!--还有另一种方法可以将 input 元素的文本与元素本身相关联。 你可以将文本嵌套在 label 元素中，并添加与 input 元素的 id 属性具有相同值的 for 属性。-->
+                        </fieldset>
+                        <input type="text" name="catphotourl" placeholder="cat photo URL" required>
+                        <!--input 元素允许你通过多种方式从 Web 表单中收集数据。 与 img 元素一样，input 元素是空元素，不需要结束标签。-->
+                        <!--你可以使用 type 属性创建多种输入。 你可以轻松创建密码字段、重置按钮或控件，让用户从其计算机中选择文件。-->
+                        <!--为了通过 action 属性中指定的位置访问表单的数据，你必须给文本字段一个 name 属性，并为其赋值来表示提交的数据。-->
+                        <!--占位符文本用于提示人们在输入框中输入什么样的信息。-->
+                        <button type="submit">Submit</button>
+                        
+                    </form>
+                    <!--form 元素用于从用户获取信息，如姓名、电子邮件和其他详细信息。-->
+                    <!--action 属性指定应该将表单数据发送到哪里。-->
+                </section>
         </main>
     </body>
 </html>
